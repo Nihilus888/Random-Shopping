@@ -1,0 +1,23 @@
+{
+  "name": "watcher-shopping",
+  "version": "1.0.0",
+  "description": "A simple standalone shopping website with user login and some additional features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nihilus888/Watcher-Shopping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nihilus888/Watcher-Shopping/issues"
+  },
+  "homepage": "https://github.com/Nihilus888/Watcher-Shopping#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
