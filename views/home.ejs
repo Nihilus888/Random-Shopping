@@ -1,58 +1,86 @@
-<%- include('partials/header'); -%>
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Random Shop</title>
+</head>
+
+<body>
+  <header class="bg-orange-500 px-10 py-10 mb-3">
+    <nav class="text-white">
+      <ul class="list-none">
+        <img src="/download.png" class="inline-block pr-8 object-contain" />
+        <li class="inline-block pr-4 text-2xl italic bold ">Random Shop</li>
+        <li class="inline-block pr-4 text-3xl italic bold text-center">
+          Welcome Username!
+        </li>
+        <!--Wishlist and logout portion-->
+        <li class="inline-block pl-10 text-right text-black underline decoration-solid">
+          <a href="/wishlist">Wishlist</a>
+        </li>
+        <li class="inline-block pl-10 text-right">
+          <a href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+
 <main>
-    <body>
-        <!--recommended section header-->
-        <div>
-            <p class="inline-block text-3xl font-bold pl-10 mt-5">Things that are trending today</p>
-        </div>
+  <body>
+    <!--recommended section header-->
+    <div>
+      <p class="inline-block text-3xl font-bold pl-10 mt-5">
+        Things that are trending today
+      </p>
+    </div>
 
-        <!--rendering of the products and their description-->
-        <div class="pl-10 mt-20">
-            <ul>
-                <li class="inline-block mr-10">
-                    <p>Apple IPods</p>
-                    <p>$300</p>
-                </li>
-                <li class="inline-block mr-10">
-                    <p>Apple IPhone</p>
-                    <p>$400</p>
-                </li>
-                <li class="inline-block mr-10">
-                    <p>Apple Macbook</p>
-                    <p>$700</p>
-                </li>
-            </ul>
-        </div>
+    <!--rendering of the products and their description-->
+    <div class="pl-10 mt-20">
+      <ul>
+        <li class="inline-block mr-10">
+          <p>Apple IPods</p>
+          <p>$300</p>
+        </li>
+        <li class="inline-block mr-10">
+          <p>Apple IPhone</p>
+          <p>$400</p>
+        </li>
+        <li class="inline-block mr-10">
+          <p>Apple Macbook</p>
+          <p>$700</p>
+        </li>
+      </ul>
+    </div>
 
-        <!--Recommended Brands-->
+    <!--Recommended Brands-->
 
-        <div>
-            <p class="inline-block text-xl font-bold pl-10 mt-10">Recommended brands</p>
-        </div>
+    <div>
+      <p class="inline-block text-xl font-bold pl-10 mt-10">
+        Recommended brands
+      </p>
+    </div>
 
-        <div class="pl-10 mt-20 mb-20">
-            <ul>
-                <li class="inline-block mr-10">
-                    <p>Apple IPods</p>
-                    <p>$300</p>
-                </li>
-                <li class="inline-block mr-10">
-                    <p>Apple IPhone</p>
-                    <p>$400</p>
-                </li>
-                <li class="inline-block mr-10">
-                    <p>Apple Macbook</p>
-                    <p>$700</p>
-                </li>
-            </ul>
-        </div>
-
-
-        
-
-
-
-    </body>
+    <div class="pl-10 mt-20 mb-20">
+      <ul>
+        <li class="inline-block mr-10">
+          <p>Apple IPods</p>
+          <p>$300</p>
+        </li>
+        <li class="inline-block mr-10">
+          <p>Apple IPhone</p>
+          <p>$400</p>
+        </li>
+        <li class="inline-block mr-10">
+          <p>Apple Macbook</p>
+          <p>$700</p>
+        </li>
+      </ul>
+    </div>
+  </body>
 </main>
 
 <%- include('partials/footer'); -%>

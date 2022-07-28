@@ -21,6 +21,17 @@ app.get('/Signup', (req, res) => {
     res.render('Signup')
 })
 
+//wishlist page
+app.get('/Wishlist', (req, res) => {
+    res.render('wishlist')
+})
+
+//update wishlist page
+app.get('/Update', (req, res) => {
+    res.render('Update')
+})
+
+
 //listening on port
 app.listen(port, () => {
     console.log(`Budgtr app listening on port ${port}`)

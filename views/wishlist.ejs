@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Random Shop</title>
+  </head>
+
+  <body>
+    <header class="bg-orange-500 py-10 mb-3">
+      <nav class="text-white">
+        <ul class="list-none">
+          <img
+            src="/download.png"
+            class="inline-block pr-8 object-contain pl-10"
+          />
+          <li class="inline-block text-2xl italic bold indent-20">
+            Random Shop
+          </li>
+          <li
+            class="inline-block indent-80 text-3xl italic bold text-center text-black underline"
+          >
+            Wishlist
+          </li>
+          <!--Wishlist and logout portion-->
+          <li class="inline-block pr-10 text-right indent-96">
+            <!--Update routing parameters-->
+            <a href="/">Home</a>
+          </li>
+          <li class="inline-block pr-10 text-right indent-10">
+            <!--Update logout parameters-->
+            <a href="/">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+
+  <main>
+    <div class="box-border h-40 w-8/12 border-4 mt-10 text-center m-auto">
+      <img src="/download.png" />
+      <span class="text-center">
+        <p>Name:</p>
+        <p>Price:</p>
+        <p>Expected Delivery Time:</p>
+        <p>Country:</p>
+      </span>
+    </div>
+
+    <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 text-center m-auto">
+      <img src="download.png" />
+      <span class="text-center">
+        <p>Name:</p>
+        <p>Price:</p>
+        <p>Expected Delivery Time:</p>
+        <p>Country:</p>
+      </span>
+    </div>
+
+    <div class="px-80 indent-80">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 text-center m-auto"
+      >
+        Update Wishlist
+      </button>
+    </div>
+
+    <%- include('partials/footer'); -%>
+  </main>
+</html>
