@@ -2,24 +2,21 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.odxzs.mongodb.net/test`
+
+const pageController = require('./controller/pages/page_controller')
+
+//set view engine
 app.set('view engine', 'ejs')
 
+// Apply middlewares
 app.use(express.urlencoded({extended: true}))
+app.use(express.static('public'))
 
 //render home page that is not logged in
-app.get('/', (req, res) => {
-    res.render('home')
-})
-
-//render sign in page 
-app.get('/Signin', (req, res) => {
-    res.render('Signin')
-})
-
-//render sign up page
-app.get('/Signup', (req, res) => {
-    res.render('Signup')
-})
+app.get('/', pageController.showHome)
+app.get('/Signin', pageController.showSignIn)
+app.get('/Signup', pageController.showSignUp)
 
 //wishlist page
 app.get('/Wishlist', (req, res) => {
