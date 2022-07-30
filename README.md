@@ -7,7 +7,7 @@ a short while due to the cookie expiring. This will increase the security of the
 hijacking, unauthorized login if the person's computer has been stolen, etc. 
 
 
-## Planning Stage
+## Planning Stages
 
 1. Wireframing
 Not logged in wireframe flowchart
@@ -24,7 +24,7 @@ pages and how they interact. This wireframe gives an idea of what to include in 
 
 2. Flowchart
 
-This flowchart gives a high level overview of how the system is suppose to run. It is impossible to foresee all the edge cases that might happen, but this helps to reduce the probability of such things occurring. 
+This flowchart gives a high level overview of how the system is suppose to run. It is impossible to foresee all the edge cases that might happen, but this helps to reduce the probability of such things occurring. However, I believe that we can plan better when we do it first as we can conceptualize the edge cases better. Drafting this flowchart was hard initially as I attempted to combine all of it into a uni-directional flow chart which was a big mistake. After some prodding from my instructors, I managed to clean it up and divide it into various stages for easier viewing and overview. 
 
 
 
