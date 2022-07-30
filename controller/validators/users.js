@@ -6,11 +6,11 @@ const userValidators = {
     createUser: Joi.object({
         username: Joi.string().min(5).required(),
         password: JoiPassword.string()
+        .min(5)
         .minOfSpecialCharacters(2)
-        .minOfUppercase(1)
         .noWhiteSpaces()
         .required(),
-        confirmPassword:Joi.string().required().valid(Joi.ref('password')),
+        confirmPassword: Joi.string().required().valid(Joi.ref('password')),
     })
 }
 

@@ -1,2 +1,31 @@
 # Watcher-Shopping
-A simple standalone shopping website with user login and some additional features
+
+## Summary
+A simple standalone shopping website with user login and some additional features like adding wishlist, deleting items from your wishlist
+and creating your wishlist. Only authenticated users will be able to have this additional features and authentication will expire after
+a short while due to the cookie expiring. This will increase the security of the user's account and prevent cyber threats like session
+hijacking, unauthorized login if the person's computer has been stolen, etc. 
+
+
+## Planning Stage
+
+1. Wireframing
+Not logged in wireframe flowchart
+Screenshot 2022-07-29 at 7.30.37 PM.png
+
+Logged in wireframe flowchart
+Screenshot 2022-07-30 at 6.06.01 PM.png
+
+Entire wireframe flowchart
+Screenshot 2022-07-30 at 6.07.20 PM.png
+
+The wireframe flowchart gives us an idea of how to different pages are suppose to look and shows the relationship between the different web
+pages and how they interact. This wireframe gives an idea of what to include in my web design and what I have missed. 
+
+2. Flowchart
+
+This flowchart gives a high level overview of how the system is suppose to run. It is impossible to foresee all the edge cases that might happen, but this helps to reduce the probability of such things occurring. 
+
+
+
+
