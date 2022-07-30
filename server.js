@@ -11,6 +11,7 @@ const port = 3000
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.odxzs.mongodb.net`
 
 const pageController = require('./controller/pages/page_controller')
+const userController = require('./controller/users/users_controller')
 
 //set view engine
 app.set('view engine', 'ejs')
@@ -29,6 +30,7 @@ app.use(session({
 app.get('/', pageController.showHome)
 app.get('/Signin', pageController.showSignIn)
 app.get('/Signup', pageController.showSignUp)
+app.post('/Signup', userController.signUp)
 
 //wishlist page
 app.get('/Wishlist', (req, res) => {

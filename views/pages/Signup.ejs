@@ -12,36 +12,65 @@
   <header class="bg-orange-500 px-10 py-10 mb-3">
     <nav class="text-white">
       <ul class="list-none">
-        <img src="/download.png" class="object-cover pl-80 indent-72 inline-block">
+        <img
+          src="/download.png"
+          class="object-cover pl-80 indent-72 inline-block"
+        />
         <li class="inline-block text-2xl italic bold">Random Shop</li>
-        <!--Home portion-->  
+        <!--Home portion-->
         <li class="inline-block pr-4 indent-72"><a href="/">Home</a></li>
-        <li class="inline-block pr-4 indent-20"><a href="/Signin">Sign In</a></li>
+        <li class="inline-block pr-4 indent-20">
+          <a href="/Signin">Sign In</a>
+        </li>
       </ul>
     </nav>
   </header>
-
 </body>
-<form action="action_page.php" class="" action="POST">
-    <div class="box-border h-fill w-6/12 border-4 mt-10 mb-10 text-center m-auto">
-      <h1 class="form-signin-heading mt-10 text-bold text-5xl">Sign Up</h1>
-        
-      <p class="mt-10">Create a username:</p>
-      <label for="email"></label>
-      <input type="text" placeholder="Enter Email" name="email" class="mt-5 border-2 border-black-800" required>
-        
-      <p class="mt-10">Create a password: </p>
-      <label for="psw"></label>
-      <input type="password" placeholder="Enter Password" name="psw" class="mt-5 border-2 border-black-800" required>
-        
-      <p class="mt-10" >Confirm password:</p>
-      <label for="psw-repeat"></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" class="mt-5 border-2 border-black-800"  required>
-  
-  
-      <p class="mt-10 mb-5">Already have an account?<a href="/Signin" class="text-bold"> Sign In</a></p>
-    </div>
-  </form>
+<form action="/users/login" action="POST">
+  <div class="box-border h-full w-6/12 border-4 mt-10 mb-10 text-center m-auto">
+    <h1 class="form-signin-heading mt-10 text-bold text-5xl">Sign Up</h1>
 
+    <p class="mt-10">Create a username:</p>
+    <label for="email"></label>
+    <input
+      type="text"
+      placeholder="Enter Username"
+      name="email"
+      class="mt-5 border-2 border-black-800"
+      required
+    />
+
+    <p class="mt-10">Create a password:</p>
+    <label for="psw"></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="psw"
+      class="mt-5 border-2 border-black-800"
+      required
+    />
+
+    <p class="mt-10">Confirm password:</p>
+    <label for="psw-repeat"></label>
+    <input
+      type="password"
+      placeholder="Repeat Password"
+      name="psw-repeat"
+      class="mt-5 border-2 border-black-800"
+      required
+    />
+    <div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </div>
+    <p class="mt-10 mb-5">
+      Already have an account?<a href="/Signin" class="text-bold"> Sign In</a>
+    </p>
+  </div>
+</form>
 
 <%- include('../partials/footer'); -%>
