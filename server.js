@@ -28,9 +28,12 @@ app.use(session({
 
 //render home page that is not logged in
 app.get('/', pageController.showHome)
-app.get('/Signin', pageController.showSignIn)
 app.get('/Signup', pageController.showSignUp)
-app.post('/Signup', userController.signUp)
+app.get('/Signin', pageController.showSignIn)
+
+// User Routes
+app.post('/users/singUp', userController.signUp)
+app.post('/users/login', userController.login)
 
 //wishlist page
 app.get('/Wishlist', (req, res) => {

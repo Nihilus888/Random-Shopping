@@ -25,6 +25,7 @@ const seedProducts = [
     price: 100,
     expectedDelivery: 2,
     country: "USA",
+    randomStuff: 'Pop'
   },
 
   {
