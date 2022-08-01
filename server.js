@@ -3,7 +3,9 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const session = require('express-session')
+const {check, validtionResult} = require('express-validator')
 
 const app = express()
 const port = 3000
@@ -32,8 +34,7 @@ app.get('/Signup', pageController.showSignUp)
 app.get('/Signin', pageController.showSignIn)
 
 // User Routes
-app.post('/users/singUp', userController.signUp)
-app.post('/users/login', userController.login)
+app.post('/SignUp', userController.signUp)
 
 //wishlist page
 app.get('/Wishlist', (req, res) => {

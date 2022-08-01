@@ -7,10 +7,13 @@ const userValidators = {
         username: Joi.string().min(5).required(),
         password: JoiPassword.string()
         .min(5)
-        .minOfSpecialCharacters(2)
         .noWhiteSpaces()
         .required(),
         confirmPassword: Joi.string().required().valid(Joi.ref('password')),
+
+        if(err) {
+            console.log(err)
+        }
     })
 }
 
