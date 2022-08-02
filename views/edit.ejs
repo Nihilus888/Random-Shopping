@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Random Shop</title>
+  </head>
+
+  <body>
+    <header class="bg-orange-500 py-10 mb-3">
+      <nav class="text-white">
+        <ul class="list-none">
+          <img
+            src="/download.png"
+            class="inline-block pr-8 object-contain pl-10"
+          />
+          <li class="inline-block text-2xl italic bold indent-20">
+            Random Shop
+          </li>
+          <li
+            class="inline-block indent-72 text-3xl bold text-center underline text-black"
+          >
+            Edit Wishlist
+          </li>
+          <!--Wishlist and logout portion-->
+          <li class="inline-block pr-10 text-right indent-40">
+            <!--Update routing parameters-->
+            <a href="/">Home</a>
+          </li>
+
+          <li class="inline-block pr-10 text-right indent-10">
+            <!--Update routing parameters-->
+            <a href="/wishlist">Wishlist</a>
+          </li>
+
+          <li class="inline-block pr-10 text-right indent-10">
+            <!--Update logout parameters-->
+            <a href="/">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+
+  <main class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
+    <div>
+      <p class="mt-5">Edit Product name</p>
+      <input
+        id="product_name_input"
+        name="product_name"
+        autofocus="on"
+        type="text"
+        autocomplete="off"
+        class="border-2 border-black-800 mt-5"
+        required
+      />
+
+      <p class="mt-5">Edit Price</p>
+      <input
+        id="price_name_input"
+        name="price_name"
+        autofocus="on"
+        type="text"
+        autocomplete="off"
+        class="border-2 border-black-800 mt-5"
+        required
+      />
+
+      <p class="mt-5">Edit Expected days of delivery(optional)</p>
+      <input
+        id="expected_days_input"
+        name="expected_days_name"
+        autofocus="on"
+        type="text"
+        autocomplete="off"
+        class="border-2 border-black-800 mt-5"
+      />
+
+      <p class="mt-5">Edit Country (optional)</p>
+      <input
+        id="country_input"
+        name="country_name"
+        autofocus="on"
+        type="text"
+        autocomplete="off"
+        class="border-2 border-black-800 mt-5"
+      />
+    </div>
+
+    <div class="px-20">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 mb-5 text-center m-auto"
+        type="submit"
+      >
+        <a href="/Edit">Edit Wishlist</a>
+      </button>
+    </div>
+
+    <%- include('partials/footer'); -%>
+  </main>
+</html>

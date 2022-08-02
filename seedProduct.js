@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 const mongoose = require("mongoose");
-const Product = require("./models/products/products");
+const Product = require("./models/wishlist/wishlist");
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.odxzs.mongodb.net`
 
 

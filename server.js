@@ -5,7 +5,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const {check, validtionResult} = require('express-validator')
+const methodOverride = require('method-override')
 
 const app = express()
 const port = 3000
@@ -21,6 +21,7 @@ app.set('view engine', 'ejs')
 // Apply middlewares
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -36,6 +37,8 @@ app.get('/Signin', pageController.showSignIn)
 // User Routes
 app.post('/SignUp', userController.signUp)
 
+app.get('/Signin', userController.login)
+
 //wishlist page
 app.get('/Wishlist', (req, res) => {
     res.render('wishlist')
@@ -44,6 +47,10 @@ app.get('/Wishlist', (req, res) => {
 //update wishlist page
 app.get('/Update', (req, res) => {
     res.render('update')
+})
+
+app.get('/Edit', (req, res) => {
+    res.render('edit')
 })
 
 

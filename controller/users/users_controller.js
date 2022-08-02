@@ -27,6 +27,7 @@ const controller = {
     //hash password
     const hash = await bcrypt.hash(validateUser.password, 5);
 
+    //with user data schema validation, create a username, password and hash in the DB
     try {
       await userModel.create({
         username: validatedUser.username,
@@ -59,6 +60,7 @@ const controller = {
       return;
     }
 
+    //compare password hash to see if it matches
     const passwordinDB = await bcrypt.compare(
       validatedResults.password,
       user.hash
@@ -86,17 +88,19 @@ const controller = {
       req.session.save(function (err) {
         if (err) {
           //error will send the user to the Sign in page again
-          res.send("session cannot be saved");
+          res.send("Session cannot be saved");
           res.redirect("/Signin");
           return;
         }
 
+        //redirect to login home
         res.redirect("/home");
       });
     });
   },
 
   logout: async(req, res) => {
+    //destroy session and cookies for security and routes back to home unlogged in page
     res.session.destroy(null);
     res.clearCookie(this.cookie, {path: '/'})
     req.logout()
