@@ -14,6 +14,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 
 const pageController = require('./controller/pages/page_controller')
 const userController = require('./controller/users/users_controller')
+const authorization = require('./middleware/authorization')
 
 //set view engine
 app.set('view engine', 'ejs')
@@ -26,7 +27,7 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true , maxAge: 6000000}
+    cookie: { secure: false, httpOnly: false, maxAge: 6000000}
   }))
 
 //render home page that is not logged in
@@ -34,25 +35,34 @@ app.get('/', pageController.showHome)
 app.get('/Signup', pageController.showSignUp)
 app.get('/Signin', pageController.showSignIn)
 
-// User Routes
-app.post('/SignUp', userController.signUp)
+// Use post method when user signs up
+app.post('/signup', userController.signUp)
 
-app.get('/Signin', userController.login)
+// Use post method when user sign in
+app.post('/signin', userController.login)
+
+//Get home loggedin page
+app.get('/Home', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/home')
+})
 
 //wishlist page
-app.get('/Wishlist', (req, res) => {
-    res.render('wishlist')
+app.get('/Wishlist', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/wishlist')
 })
 
 //update wishlist page
-app.get('/Update', (req, res) => {
-    res.render('update')
+app.get('/Update', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/update')
 })
 
-app.get('/Edit', (req, res) => {
-    res.render('edit')
+//Edit wishlist page
+app.get('/Edit', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/edit')
 })
 
+//logout route
+app.delete('/logout', authorization.Authenticated, userController.logout)
 
 //listening on port 
 app.listen(port, async () => {

@@ -25,10 +25,9 @@
       </ul>
     </nav>
   </header>
-</body>
 
 <!--form-->
-<form action="/Signup" action="POST">
+<form action="/signup" method="POST">
   <div class="box-border h-full w-6/12 border-4 mt-10 mb-10 text-center m-auto">
     <h1 class="form-signin-heading mt-10 text-bold text-5xl">Sign Up</h1>
 
@@ -37,27 +36,28 @@
     <input
       type="text"
       placeholder="Enter Username"
-      name="email"
+      name="username"
       class="mt-5 border-2 border-black-800"
       required
     />
 
     <p class="mt-10">Create a password:</p>
+    <!--change the label for and name to password-->
     <label for="psw"></label>
     <input
       type="password"
       placeholder="Enter Password"
-      name="psw"
+      name="password"
       class="mt-5 border-2 border-black-800"
       required
     />
 
     <p class="mt-10">Confirm password:</p>
-    <label for="psw-repeat"></label>
+    <label for="confirmPassword"></label>
     <input
       type="password"
       placeholder="Repeat Password"
-      name="psw-repeat"
+      name="confirmPassword"
       class="mt-5 border-2 border-black-800"
       required
     />
@@ -66,7 +66,7 @@
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10"
         type="submit"
       >
-        <a href="/Signin">Sign up</a>
+        Sign up
       </button>
     </div>
     <p class="mt-10 mb-5">
@@ -74,5 +74,6 @@
     </p>
   </div>
 </form>
+</body>
 
 <%- include('../partials/footer'); -%>

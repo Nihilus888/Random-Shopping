@@ -1,11 +1,9 @@
-const res = require("express/lib/response")
-
 module.exports = {
     Authenticated: (req, res, next) => {
-
-        //fail to login, redirect to sign in page
-        if(!req.session.user) {
-            res.redirect('/pages/Signin')
+        console.log(req.session.user)
+        //if there are no sessions, redirect to sign in page
+        if(!req.session.user){
+            res.redirect('/signin')
             return
         }
 
