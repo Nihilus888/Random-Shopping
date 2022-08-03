@@ -52,19 +52,19 @@ app.get('/Home', authorization.Authenticated, (req, res) => {
 })
 
 //wishlist page
-app.get('/Wishlist', authorization.Authenticated, wishListcontroller.listWishlist)
+app.get('/wishlist', authorization.Authenticated, wishListcontroller.listWishlist)
 
 //update wishlist page
-app.post('/Update', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/update')
+app.get('/update', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/Update')
 })
 
 
 //post request to update wishlist
-app.post('/Update', wishListcontroller.createWishList)
+app.post('/update', wishListcontroller.createWishList)
 
 //Edit wishlist page
-app.get('/Edit', authorization.Authenticated, (req, res) => {
+app.get('/edit', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/edit')
 })
 

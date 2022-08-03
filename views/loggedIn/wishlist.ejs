@@ -14,7 +14,7 @@
       <nav class="text-white">
         <ul class="list-none">
           <img
-            src="/download.png"
+            src="/img/download.png"
             class="inline-block pr-8 object-contain pl-10"
           />
           <li class="inline-block text-2xl italic bold indent-20">
@@ -40,26 +40,47 @@
 
     <% wishList.forEach(item => { %>
 
-      <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 text-center m-auto">
-        <img src="download.png" />
-          <span class="text-center">
-            <p>Name: <%= item.productName %></p>
-            <p>Price: <%= item.price %></p>
-            <p>Expected Delivery: <%= item.expectedDelivery %></p>
-            <p>Country: <%= item.country %></p>
+    <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 m-auto">
+      <span class="text-center">
+        <p class="mt-2">
+          Name: <span class="font-bold"><%= item.productName %></span>
+        </p>
+        <p class="mt-2">
+          Price: <span class="font-bold"><%= item.price %></span>
+        </p>
+        <p class="mt-2">
+          Expected Delivery:
+          <span class="font-bold"><%= item.expectedDelivery %></span>
+        </p>
+        <p class="mt-2">
+          Country: <span class="font-bold"><%= item.country %></span>
+        </p>
       </span>
+
+      <div class="ml-20 text-right">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-20"
+          type="submit"
+        >
+          Delete
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          type="submit"
+        >
+         <a href="/edit">Edit</a>
+        </button>
+      </div>
     </div>
     <% }) %>
 
     <div class="px-80 indent-80">
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 text-center m-auto"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2 mb-5 text-center m-auto"
         type="submit"
       >
         <a href="/update">Update Wishlist</a>
       </button>
     </div>
   </body>
-
-  <%- include('../partials/footer'); -%>
 </html>

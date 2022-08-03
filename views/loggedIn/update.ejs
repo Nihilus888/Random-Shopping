@@ -44,62 +44,59 @@
       </nav>
     </header>
 
+    <form method="POST" action="/Update">
+      <div class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
+        <div>
+          <p class="mt-5">Product name</p>
+          <input
+            id="product_name_input"
+            name="productName"
+            autofocus="on"
+            type="text"
+            autocomplete="off"
+            class="border-2 border-black-800 mt-5"
+          />
 
-  <div class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
-    <div>
+          <p class="mt-5">Price</p>
+          <input
+            id="price_name_input"
+            name="price"
+            autofocus="on"
+            type="text"
+            autocomplete="off"
+            class="border-2 border-black-800 mt-5"
+          />
 
-      <p class="mt-5">Product name</p>
-      <input
-        id="product_name_input"
-        name="productName"
-        autofocus="on"
-        type="text"
-        autocomplete="off"
-        class="border-2 border-black-800 mt-5"
-        required
-      />
+          <p class="mt-5">Expected days of delivery(optional)</p>
+          <input
+            id="expected_days_input"
+            name="expectedDelivery"
+            autofocus="on"
+            type="text"
+            autocomplete="off"
+            class="border-2 border-black-800 mt-5"
+          />
 
-      <p class="mt-5">Price</p>
-      <input
-        id="price_name_input"
-        name="price"
-        autofocus="on"
-        type="text"
-        autocomplete="off"
-        class="border-2 border-black-800 mt-5"
-        required
-      />
+          <p class="mt-5">Country (optional)</p>
+          <input
+            id="country_input"
+            name="country"
+            autofocus="on"
+            type="text"
+            autocomplete="off"
+            class="border-2 border-black-800 mt-5"
+          />
+        </div>
 
-      <p class="mt-5">Expected days of delivery(optional)</p>
-      <input
-        id="expected_days_input"
-        name="expectedDelivery"
-        autofocus="on"
-        type="text"
-        autocomplete="off"
-        class="border-2 border-black-800 mt-5"
-      />
-
-    <p class="mt-5">Country (optional)</p>
-      <input
-        id="country_input"
-        name="country"
-        autofocus="on"
-        type="text"
-        autocomplete="off"
-        class="border-2 border-black-800 mt-5"
-      />
-
-    </div>
-
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-3 rounded mt-5 mb-5 p-10" type="submit">
-      Update
-    </button>
-
-  </div>
-
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-3 rounded mt-5 mb-10 p-10"
+          type="submit"
+        >
+          Update
+        </button>
+      </div>
+    </form>
   </body>
-  
 
   <%- include('../partials/footer'); -%>
 </html>

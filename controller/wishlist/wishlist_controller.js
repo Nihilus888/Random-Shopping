@@ -7,7 +7,7 @@ const wishListcontroller = {
 
     createWishList: async (req, res) => {
         // check if the create wishlist fulfills data schema validation
-        const validationResults = wishlistValidators.updateWishList.validate(req.body)
+        const validationResults = wishlistValidators.createWishList.validate(req.body)
         console.log(req.body)
         console.log(validationResults)
 
@@ -22,7 +22,7 @@ const wishListcontroller = {
         const validatedResults = validationResults.value
         console.log(validatedResults)
 
-        // create the model with the validation data schema
+        // create the model with the validation data schema or return error
         try {
             await wishlistModel.create(validatedResults)
         } catch(err) {
@@ -32,7 +32,6 @@ const wishListcontroller = {
         // redirect to wishlist page after updating
         console.log('create wishlist successful')
         res.redirect('/wishlist')
-        return
     },
 
     deleteWishList: async (req, res) => {
