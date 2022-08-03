@@ -1,6 +1,5 @@
 module.exports = {
     Authenticated: (req, res, next) => {
-        console.log(req.session.user)
         //if there are no sessions, redirect to sign in page
         if(!req.session.user){
             res.redirect('/signin')

@@ -3,20 +3,24 @@ const wishlistModel = require('../../models/wishlist/wishlist')
 const wishlistValidators = require('../validators/wishlist')
 const wishList = require('../validators/wishlist')
 
-const controller = {
+const wishListcontroller = {
 
     createWishList: async (req, res) => {
         // check if the create wishlist fulfills data schema validation
         const validationResults = wishlistValidators.updateWishList.validate(req.body)
+        console.log(req.body)
+        console.log(validationResults)
 
         //if does not fulfill data schema validation, throw out error
         if (validationResults.error) {
+            console.log(validationResults.error)
             res.send(validationResults.error)
             return
         }
         
         // get the value of the wishlist which has been verified
         const validatedResults = validationResults.value
+        console.log(validatedResults)
 
         // create the model with the validation data schema
         try {
@@ -26,6 +30,7 @@ const controller = {
         }
 
         // redirect to wishlist page after updating
+        console.log('create wishlist successful')
         res.redirect('/wishlist')
         return
     },
@@ -45,12 +50,13 @@ const controller = {
 
     listWishlist: async (req, res) => {
         //find all the wishlist stored in the DB
-        const wishList = await wishlistModel.find.exec()
+        const wishList = await wishlistModel.find().exec()
+        console.log(wishList)
 
         //render out the wishlist in the wishlist page
-        res.render('/wishlist', {wishList})
+        res.render('loggedIn/wishlist', {wishList})
     },
 
 }
 
-module.exports = controller
+module.exports = wishListcontroller

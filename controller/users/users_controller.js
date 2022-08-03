@@ -3,18 +3,16 @@ const userModel = require("../../models/users/users");
 const userValidators = require("../validators/users");
 
 const controller = {
-
   signUp: async (req, res) => {
-    console.log('Signup')
+    console.log("Signup");
     //validations
     const validateUser = userValidators.createUser.validate(req.body);
 
     if (validateUser.error) {
-      res.send('error')
+      res.send("error");
       return;
     }
 
-  
     const validatedUser = validateUser.value;
 
     //Joi-password would have probably validated the password and the confirm password
@@ -25,13 +23,13 @@ const controller = {
       );
       return;
     }
-    console.log('whatever')
+    console.log("whatever");
     //hash password
     const hash = await bcrypt.hash(validatedUser.password, 5);
 
     //with user data schema validation, create a username, password and hash in the DB
     try {
-      console.log('Creating user')
+      console.log("Creating user");
       await userModel.create({
         username: validatedUser.username,
         password: validatedUser.password,
@@ -95,21 +93,24 @@ const controller = {
           res.redirect("/pages/signin");
           return;
         }
-        console.log('Login successful')
+        console.log("Login successful");
         //redirect to login home
         res.redirect("/Home");
       });
     });
   },
 
-  logout: async(req, res) => {
-
+  logout: async (req, res) => {
     //destroy session and cookies for security and routes back to home unlogged in page
-    res.session.destroy();
-    res.clearCookie(this.cookie, {path: '/'})
-    req.logout()
-    res.redirect('/')
-  }
+    res.session.destroy(function (err) {
+      if (!err) {
+        res.clearCookie("connect.sid");
+        res.redirect('/')
+      } else {
+        res.send("error while logging out");
+      }
+    });
+  },
 };
 
 module.exports = controller;

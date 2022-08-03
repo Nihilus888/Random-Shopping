@@ -15,6 +15,11 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 const pageController = require('./controller/pages/page_controller')
 const userController = require('./controller/users/users_controller')
 const authorization = require('./middleware/authorization')
+const { createWishList, listWishlist } = require('./controller/wishlist/wishlist_controller')
+const { updateWishList } = require('./controller/validators/wishlist')
+const wishlistValidators = require('./controller/validators/wishlist')
+const controller = require('./controller/wishlist/wishlist_controller')
+const wishListcontroller = require('./controller/wishlist/wishlist_controller')
 
 //set view engine
 app.set('view engine', 'ejs')
@@ -47,14 +52,16 @@ app.get('/Home', authorization.Authenticated, (req, res) => {
 })
 
 //wishlist page
-app.get('/Wishlist', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/wishlist')
-})
+app.get('/Wishlist', authorization.Authenticated, wishListcontroller.listWishlist)
 
 //update wishlist page
-app.get('/Update', authorization.Authenticated, (req, res) => {
+app.post('/Update', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/update')
 })
+
+
+//post request to update wishlist
+app.post('/Update', wishListcontroller.createWishList)
 
 //Edit wishlist page
 app.get('/Edit', authorization.Authenticated, (req, res) => {

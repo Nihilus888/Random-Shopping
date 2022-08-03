@@ -12,44 +12,64 @@
   <header class="bg-orange-500 px-10 py-10 mb-3">
     <nav class="text-white">
       <ul class="list-none">
-        <img src="/shopping-cart-line-icon-online-buying-sign-supermarket-basket-symbol-gradient-design-elements-linear-shop-random-shapes-vector-148887562.jpg" class="inline-block pl-80 indent-72">
+        <img
+          src="/shopping-cart-line-icon-online-buying-sign-supermarket-basket-symbol-gradient-design-elements-linear-shop-random-shapes-vector-148887562.jpg"
+          class="inline-block pl-80 indent-72"
+        />
         <li class="inline-block text-2xl italic bold">Random Shop</li>
-        <!--Home portion-->  
+        <!--Home portion-->
         <li class="inline-block pr-4 indent-72"><a href="/">Home</a></li>
-        <li class="inline-block pr-4 indent-20"><a href="/Signup">Sign Up</a></li>
+        <li class="inline-block pr-4 indent-20">
+          <a href="/Signup">Sign Up</a>
+        </li>
       </ul>
     </nav>
   </header>
 
+  <div class="box-border h-fill w-6/12 border-4 mt-10 mb-10 text-center m-auto">
+    <form id="loginForm" class="form-signin" method="POST" action="/Signin">
+      <h2 class="form-signin-heading mt-10 text-bold text-5xl">Sign in</h2>
+      <div>
+        <p class="mt-10 mb-5">Username:</p>
+        <input
+          id="username_input"
+          name="username"
+          autofocus="on"
+          type="text"
+          autocomplete="off"
+          class="border-2 border-black-800"
+          placeholder="Username"
+        />
+      </div>
+
+      <div>
+        <p class="mt-10 mb-5">Password:</p>
+        <input
+          id="password_input"
+          name="password"
+          type="password"
+          autocomplete="off"
+          class="border-2 border-black-800"
+          placeholder="Password"
+        />
+      </div>
+
+      <div>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 mb-10"
+          type="submit"
+        >
+          Sign in
+        </button>
+      </div>
+
+      <div>
+        <p class="mb-10">
+          Don't have an account? <a href="/Signup"> Sign up</a>
+        </p>
+      </div>
+    </form>
+  </div>
 </body>
 
-
-    <main>
-        <div class="box-border h-fill w-6/12 border-4 mt-10 mb-10 text-center m-auto">
-
-            <form id="loginForm" class="form-signin" method="POST" action="/Signin">
-                <h2 class="form-signin-heading mt-10 text-bold text-5xl">Sign in</h2>
-                <div>
-                    <div>
-                        <p class="mt-10 mb-5">Username:</p>
-                        <input id="username_input" name="username" autofocus="on" type="text" autocomplete="off" class="border-2 border-black-800" placeholder="Username">
-                    </div>
-                    <div>
-                      <p class="mt-10 mb-5">Password:</p>
-                        <input id="password_input" name="password" type="password" autocomplete="off" class="border-2 border-black-800" placeholder="Password">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 mb-10" type="submit">Sign in</button>
-                    </div>
-                </div>
-                <div>
-                    <p class="mb-10">Don't have an account? <a href="/Signup"> Sign up</a></p>
-                </div>
-            </form>
-        </div>
-    </main>
-
 <%- include('../partials/footer'); -%>
-

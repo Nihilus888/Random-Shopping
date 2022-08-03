@@ -37,37 +37,29 @@
         </ul>
       </nav>
     </header>
-  </body>
 
-  <main>
-    <div class="box-border h-40 w-8/12 border-4 mt-10 text-center m-auto">
-      <img src="/download.png" />
-      <span class="text-center">
-        <p>Name:</p>
-        <p>Price:</p>
-        <p>Expected Delivery Time:</p>
-        <p>Country:</p>
+    <% wishList.forEach(item => { %>
+
+      <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 text-center m-auto">
+        <img src="download.png" />
+          <span class="text-center">
+            <p>Name: <%= item.productName %></p>
+            <p>Price: <%= item.price %></p>
+            <p>Expected Delivery: <%= item.expectedDelivery %></p>
+            <p>Country: <%= item.country %></p>
       </span>
     </div>
-
-    <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 text-center m-auto">
-      <img src="download.png" />
-      <span class="text-center">
-        <p>Name:</p>
-        <p>Price:</p>
-        <p>Expected Delivery Time:</p>
-        <p>Country:</p>
-      </span>
-    </div>
+    <% }) %>
 
     <div class="px-80 indent-80">
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 text-center m-auto" type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-10 text-center m-auto"
+        type="submit"
       >
-      <a href="/update">Update Wishlist</a>
+        <a href="/update">Update Wishlist</a>
       </button>
     </div>
+  </body>
 
-    <%- include('../partials/footer'); -%>
-  </main>
+  <%- include('../partials/footer'); -%>
 </html>
