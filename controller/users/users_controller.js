@@ -94,6 +94,7 @@ const controller = {
           return;
         }
         console.log("Login successful");
+        console.log(user.username)
         //redirect to login home
         res.redirect("/Home");
       });
@@ -101,16 +102,27 @@ const controller = {
   },
 
   logout: async (req, res) => {
-    //destroy session and cookies for security and routes back to home unlogged in page
-    res.session.destroy(function (err) {
-      if (!err) {
-        res.clearCookie("connect.sid");
-        res.redirect('/')
-      } else {
-        res.send("error while logging out");
-      }
-    });
-  },
-};
+    req.session.user = null
+
+    req.session.save(function (err) {
+        if (err) {
+            res.redirect('/')
+            return
+        }
+
+        // regenerate the session, which is good practice to help
+        // guard against forms of session fixation
+        req.session.regenerate(function (err) {
+            if (err) {
+                res.redirect('/Home')
+                return
+            }
+            
+            res.redirect('/')
+        })
+    })
+}
+
+}
 
 module.exports = controller;

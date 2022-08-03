@@ -68,8 +68,11 @@ app.get('/edit', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/edit')
 })
 
+//delete wishlist
+app.delete('/:productName', authorization.Authenticated, wishListcontroller.deleteWishList)
+
 //logout route
-app.delete('/logout', authorization.Authenticated, userController.logout)
+app.post('/logout', authorization.Authenticated, userController.logout)
 
 //listening on port 
 app.listen(port, async () => {

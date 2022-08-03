@@ -37,7 +37,8 @@ const wishListcontroller = {
     deleteWishList: async (req, res) => {
 
         //get the object id or name of the product
-        const product = await wishList.find().exec()
+        console.log(req.product.productName)
+
         //compare it to the object id in the DB
         const productInDB = await wishList.findById(req.params.productName)
 
@@ -55,6 +56,11 @@ const wishListcontroller = {
         //render out the wishlist in the wishlist page
         res.render('loggedIn/wishlist', {wishList})
     },
+
+    editWishList: async (req, res) => {
+        const productName = await wishlistModel.find('productName').exec()
+
+    }
 
 }
 

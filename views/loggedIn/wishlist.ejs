@@ -40,7 +40,7 @@
 
     <% wishList.forEach(item => { %>
 
-    <div class="box-border h-40 w-8/12 border-4 mt-10 mb-10 m-auto">
+    <div class="box-border h-fill w-8/12 border-4 mt-10 mb-10 m-auto">
       <span class="text-center">
         <p class="mt-2">
           Name: <span class="font-bold"><%= item.productName %></span>
@@ -57,21 +57,24 @@
         </p>
       </span>
 
-      <div class="ml-20 text-right">
+      <form method="POST" action="/delete">
+      <div class="text-center mb-10 mt-10">
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-20"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-40"
           type="submit"
         >
           Delete
         </button>
+
+      </form>
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           type="submit"
         >
          <a href="/edit">Edit</a>
-        </button>
-      </div>
+      </button>
     </div>
+  </div>
     <% }) %>
 
     <div class="px-80 indent-80">
