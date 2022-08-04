@@ -5,11 +5,11 @@ const controller = {
     },
 
     showSignIn: (req, res) => {
-        res.render('pages/Signin')
+        res.render('pages/signin')
     },
 
     showSignUp: (req, res) => {
-        res.render('pages/SignUp')
+        res.render('pages/signup')
     }
 
 }

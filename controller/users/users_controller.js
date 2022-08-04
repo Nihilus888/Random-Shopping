@@ -37,7 +37,7 @@ const controller = {
       });
     } catch (err) {
       console.log(err);
-      res.send("Authentcation failed");
+      res.send("Authentication failed");
       return;
     }
 
