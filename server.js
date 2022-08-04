@@ -59,13 +59,19 @@ app.get('/update', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/Update')
 })
 
+//put request to
 
 //post request to update wishlist
-app.post('/update', wishListcontroller.createWishList)
+app.put('/update', wishListcontroller.createWishList)
 
 //Edit wishlist page
 app.get('/edit', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/edit')
+})
+
+//show product page
+app.get('/show', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/show')
 })
 
 //delete wishlist

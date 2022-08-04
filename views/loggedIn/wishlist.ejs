@@ -30,9 +30,13 @@
             <!--Update routing parameters-->
             <a href="/Home">Home</a>
           </li>
-          <li class="inline-block pr-10 text-right indent-10">
-            <!--Update logout parameters-->
-            <a href="/">Logout</a>
+
+          <li class="inline-block pr-10 mr-15">
+
+            <form method="POST" action="/logout">
+              <!--Update logout parameters-->
+             <button>Logout</button>
+            </form>
           </li>
         </ul>
       </nav>
@@ -58,21 +62,25 @@
       </span>
 
       <form method="POST" action="/delete">
-      <div class="text-center mb-10 mt-10">
+      <div  class="text-center mb-10 mt-5">
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-40"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-left mt-5 mb-5"
           type="submit"
         >
           Delete
         </button>
-
       </form>
+
+      <form method="GET" action="/show">
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 mb-5"
           type="submit"
         >
-         <a href="/edit">Edit</a>
-      </button>
+          View Product
+        </button>
+      </form>
+
+    </form>
     </div>
   </div>
     <% }) %>
