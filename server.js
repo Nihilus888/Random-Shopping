@@ -69,13 +69,13 @@ app.get('/edit', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/edit')
 })
 
-//show product page
+//show product page by product id
 app.get('/show', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/show')
 })
 
 //delete wishlist
-app.delete('/:productName', authorization.Authenticated, wishListcontroller.deleteWishList)
+app.delete('/remove', authorization.Authenticated, wishListcontroller.deleteWishList)
 
 //logout route
 app.post('/logout', authorization.Authenticated, userController.logout)
