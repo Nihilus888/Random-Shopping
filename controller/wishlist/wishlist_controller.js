@@ -38,14 +38,17 @@ const wishListcontroller = {
   deleteWishList: async (req, res) => {
     //find the product with the wishlist id and remove it
     try {
+        
       await wishlistModel.findOne(
         { _id: req.params.id }.exec(function (err, wishlist) {
           if (wishlist) {
             wishlist.remove();
             res.redirect("loggedIn/wishlist");
+            return
           }
         })
       );
+
     } catch (err) {
       console.log(err);
     }
@@ -64,14 +67,20 @@ const wishListcontroller = {
     //get product id
     const productId = req.params.id;
 
+    //if update wishlist is empty
+    if(!req.params.id) {
+        res.send('Please do not leave field empty')
+        return
+    }
+
     //update products based on the parameters that the user wants to update
     try {
       await wishlistModel.updateOne(
         { productId },
-        { productName: req.params.productName },
-        { price: req.params.price },
-        { expectedDays: req.params.expectedDays },
-        { country: req.params.country }
+        { productName: req.body.productName },
+        { price: req.body.price },
+        { expectedDays: req.body.expectedDays },
+        { country: req.body.country }
       );
       res.redirect("loggedIn/wishlist")
     } catch (err) {
@@ -82,10 +91,11 @@ const wishListcontroller = {
   },
 
   getWishList: async (req, res) => {
-    console.log(req.params.productName);
+    console.log(req.body.productName);
     //get product id
-    const product = await wishlistModel.findById(req.params.productName);
-
+    const product = await wishlistModel.findById(req.body.productName);
+    
+    //display product using EJS
     res.render("loggedIn/show", { product });
   },
 };

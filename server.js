@@ -15,7 +15,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 const pageController = require('./controller/pages/page_controller')
 const userController = require('./controller/users/users_controller')
 const authorization = require('./middleware/authorization')
-const { createWishList, listWishlist } = require('./controller/wishlist/wishlist_controller')
+const { createWishList, listWishlist, editWishList } = require('./controller/wishlist/wishlist_controller')
 const { updateWishList } = require('./controller/validators/wishlist')
 const wishlistValidators = require('./controller/validators/wishlist')
 const controller = require('./controller/wishlist/wishlist_controller')
@@ -59,8 +59,6 @@ app.get('/update', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/Update')
 })
 
-//put request to
-
 //post request to update wishlist
 app.put('/update', wishListcontroller.createWishList)
 
@@ -69,13 +67,16 @@ app.get('/edit', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/edit')
 })
 
+//put request to edit product details
+app.put('/:product_id', authorization.Authenticated, editWishList)
+
 //show product page by product id
 app.get('/show', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/show')
 })
 
 //delete wishlist
-app.delete('/remove', authorization.Authenticated, wishListcontroller.deleteWishList)
+app.delete('/:product_id', authorization.Authenticated, wishListcontroller.deleteWishList)
 
 //logout route
 app.post('/logout', authorization.Authenticated, userController.logout)

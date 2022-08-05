@@ -1,74 +1,131 @@
 <%- include('../partials/header'); -%>
 <main>
-    <body>
-        <!--recommended section header-->
-        <div>
-            <p class="inline-block text-3xl font-bold pl-10 mt-5">Things that are trending today</p>
-        </div>
+  <body>
+    <!--recommended section header-->
+    <div>
+      <p class="inline-block text-3xl font-bold pl-10 mt-5">
+        Things that are trending today
+      </p>
+    </div>
 
-        <!--rendering of the products and their description-->
-        <div class="pl-10 mt-20">
-            <ul>
+    <!--rendering of the products and their description-->
+    <div class="pl-10 mt-20">
+      <ul>
+        <li
+          class="inline-block mr-60 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+          <a href="https://www.apple.com/sg/airpods/">
+            <img src="/img/Apple IPod.jpg" class="mb-10" />
+            <p class="font-bold text-l">Apple AirPods</p>
+            <p class="italic text-sm mt-2">$300</p>
+          </a>
+        </li>
 
-                <li class="inline-block mr-60">
-                    <img src="/img/Apple IPod.jpg" class="mb-10">
-                    <p class="font-bold text-l">Apple IPods</p>
-                    <p class="italic text-sm mt-2">$300</p>
-                </li>
+        <li
+          class="inline-block mr-60 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+          <a href="https://www.apple.com/sg/iphone/">
+            <img src="/img/iphone-12-family-select-2021.jpg" class="mb-10" />
+            <p class="font-bold text-l">Apple IPhone</p>
+            <p class="italic text-sm mt-2">$400</p>
+          </a>
+        </li>
 
-                <li class="inline-block mr-60">
-                    <img src="/img/iphone-12-family-select-2021.jpg" class="mb-10">
-                    <p class="font-bold text-l">Apple IPhone</p>
-                    <p class="italic text-sm mt-2">$400</p>
-                </li>
+        <li
+          class="inline-block mr-60 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+          <a href="https://www.apple.com/sg/mac/">
+            <img src="/img/Macbook.jpg" class="mb-10" />
+            <p class="font-bold text-l">Apple Macbook</p>
+            <p class="italic text-sm mt-2">$700</p>
+          </a>
+        </li>
 
-                <li class="inline-block mr-60">
-                    <img src="/img/Macbook.jpg" class="mb-10">
-                    <p class="font-bold text-l">Apple Macbook</p>
-                    <p class="italic text-sm mt-2">$700</p>
-                </li>
+        <li
+          class="inline-block mr-40 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+          <a href="https://www.armaniexchange.com/us/men/shirts">
+            <img src="/img/Armani Exchange shirt.webp" class="mb-10" />
+            <p class="font-bold text-l">Armani exchange shirt</p>
+            <p class="italic text-sm mt-2">$130</p>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-                <li class="inline-block mr-40">
-                    <img src="/img/Armani Exchange shirt.webp" class="mb-10">
-                    <p class="font-bold text-l">Armani exchange shirt</p>
-                    <p class="italic text-sm mt-2">$130</p>
-                </li>
+    <!--Recommended Brands-->
 
-            </ul>
-        </div>
+    <div>
+      <p class="inline-block text-xl font-bold pl-10 mt-20">
+        Recommended brands
+      </p>
+    </div>
 
-        <!--Recommended Brands-->
+    <div class="pl-10 mt-20 mb-20">
+      <ul>
+        <li
+          class="inline-block mr-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+        <a href="https://ap.louisvuitton.com/eng-sg/homepage">
+          <img
+            src="/img/Louis Vuitton Brand.png"
+            class="object-contain hover:object-scale-down"
+            alt="Louis Vuitton brand image"
+          />
+          <p class="text-2xl font-bold mt-36 mr-52">
+            Louis Vuitton
+          </p>
+          </a
+            >
+        </li>
 
-        <div>
-            <p class="inline-block text-xl font-bold pl-10 mt-20">Recommended brands</p>
-        </div>
+        <li
+          class="inline-block mr-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+        <a href="https://www.nike.com/sg/">
+          <img
+            src="/img/Nike brand.jpg"
+            class="object-contain hover:object-scale-down"
+            alt="Nike brand image"
+          />
+          <p class="text-2xl font-bold mt-36 mr-60">
+            Nike
+          </p>
+        </a>
+        </li>
 
-        <div class="pl-10 mt-20 mb-20">
-            <ul>
+        <li
+          class="inline-block mr-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+        <a href="https://www.apple.com/sg/">
+          <img
+            src="/img/Apple-Logo-Black-Background-Wallpaper.jpg"
+            class="object-contain hover:object-scale-down"
+            alt="Apple brand image"
+          />
+          <p class="text-2xl font-bold mt-36 mr-60">
+            Apple
+          </p>
+        </a>
+        </li>
 
-                <li class="inline-block mr-10">
-                    <img src="/img/Louis Vuitton Brand.png" class="object-contain hover:object-scale-down" alt="Louis Vuitton brand image" >
-                    <p class="text-2xl font-bold mt-36 mr-52"><a href="https://ap.louisvuitton.com/eng-sg/homepage">Louis Vuitton</a></p>
-                </li>
-
-                <li class="inline-block mr-10">
-                    <img src="/img/Nike brand.jpg" class="object-contain hover:object-scale-down" alt="Nike brand image" >
-                    <p class="text-2xl font-bold mt-36 mr-60"><a href="https://www.nike.com/sg/">Nike</a></p>
-                </li>
-
-                <li class="inline-block mr-10">
-                    <img src="/img/Apple-Logo-Black-Background-Wallpaper.jpg" class="object-contain hover:object-scale-down" alt="Apple brand image" >
-                    <p class="text-2xl font-bold mt-36 mr-60"><a href="https://www.apple.com/sg/">Apple</a></p>
-                </li>
-
-                <li class="inline-block mr-10">
-                    <img src="/img/Armani Logo.png" class="object-contain hover:object-scale-down" alt="Armani brand image" >
-                    <p class="text-2xl font-bold mt-36 mr-30"><a href="https://www.armani.com/en-my">Armani</a></p>
-                </li>
-            </ul>
-        </div>
-
-    </body>
+        <li
+          class="inline-block mr-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        >
+        <a href="https://www.armani.com/en-my"></a>
+          <img
+            src="/img/Armani Logo.png"
+            class="object-contain hover:object-scale-down"
+            alt="Armani brand image"
+          />
+          <p class="text-2xl font-bold mt-36 mr-30">
+            Armani</a>
+          </p>
+        </a>
+        </li>
+      </ul>
+    </div>
+  </body>
 </main>
 
 <%- include('../partials/footer'); -%>
