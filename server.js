@@ -59,24 +59,22 @@ app.get('/update', authorization.Authenticated, (req, res) => {
     res.render('loggedIn/Update')
 })
 
-//post request to update wishlist
-app.put('/update', wishListcontroller.createWishList)
+//post request to create wishlist
+app.post('/update', wishListcontroller.createWishList)
 
 //Edit wishlist page
-app.get('/edit', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/edit')
+app.get('/edit/:productId', authorization.Authenticated, (req, res) => {
+    res.render('loggedIn/edit/:productId')
 })
 
 //put request to edit product details
-app.put('/:product_id', authorization.Authenticated, editWishList)
+app.put('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)
 
 //show product page by product id
-app.get('/show', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/show')
-})
+app.get('/show/:productId', authorization.Authenticated, wishListcontroller.getWishList)
 
-//delete wishlist
-app.delete('/:product_id', authorization.Authenticated, wishListcontroller.deleteWishList)
+//delete a certain wishlist
+app.post('/delete/:product_id', authorization.Authenticated, wishListcontroller.deleteWishList)
 
 //logout route
 app.post('/logout', authorization.Authenticated, userController.logout)

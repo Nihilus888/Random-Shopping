@@ -9,19 +9,15 @@ const wishListcontroller = {
     const validationResults = wishlistValidators.createWishList.validate(
       req.body
     );
-    console.log(req.body);
-    console.log(validationResults);
 
     //if does not fulfill data schema validation, throw out error
     if (validationResults.error) {
-      console.log(validationResults.error);
       res.send(validationResults.error);
       return;
     }
 
     // get the value of the wishlist which has been verified
     const validatedResults = validationResults.value;
-    console.log(validatedResults);
 
     // create the model with the validation data schema or return error
     try {
@@ -37,32 +33,28 @@ const wishListcontroller = {
 
   deleteWishList: async (req, res) => {
     //find the product with the wishlist id and remove it
+    const productId = req.params.product_id
+    console.log(productId)
     try {
         
-      await wishlistModel.findOne(
-        { _id: req.params.id }.exec(function (err, wishlist) {
-          if (wishlist) {
-            wishlist.remove();
-            res.redirect("loggedIn/wishlist");
-            return
-          }
-        })
-      );
+      await wishlistModel.findByIdAndRemove(productId);
+      console.log('delete successful')
 
     } catch (err) {
       console.log(err);
     }
+    res.redirect('/wishlist')
   },
 
   listWishlist: async (req, res) => {
     //find all the wishlist stored in the DB
     const wishList = await wishlistModel.find().exec();
-    console.log(wishList);
 
     //render out the wishlist in the wishlist page
     res.render("loggedIn/wishlist", { wishList });
   },
 
+  //edit wish list
   editWishList: async (req, res) => {
     //get product id
     const productId = req.params.id;
@@ -73,7 +65,7 @@ const wishListcontroller = {
         return
     }
 
-    //update products based on the parameters that the user wants to update
+    //update a specific products based on the parameters that the user wants to update 
     try {
       await wishlistModel.updateOne(
         { productId },
@@ -82,6 +74,7 @@ const wishListcontroller = {
         { expectedDays: req.body.expectedDays },
         { country: req.body.country }
       );
+
       res.redirect("loggedIn/wishlist")
     } catch (err) {
       console.log(err);
@@ -90,11 +83,11 @@ const wishListcontroller = {
     }
   },
 
+  //get specific product details
   getWishList: async (req, res) => {
-    console.log(req.body.productName);
     //get product id
-    const product = await wishlistModel.findById(req.body.productName);
-    
+    const product = await wishlistModel.findById(req.params.productId)
+
     //display product using EJS
     res.render("loggedIn/show", { product });
   },
