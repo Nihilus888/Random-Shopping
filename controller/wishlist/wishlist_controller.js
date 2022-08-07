@@ -57,32 +57,19 @@ const wishListcontroller = {
   //edit wish list
   editWishList: async (req, res) => {
     //get product id
-    const productId = req.params.id;
+    console.log(req.params.productId)
+    const product = await wishlistModel.findById(req.params.productId)
+    console.log(product)
 
     //if update wishlist is empty
-    if(!req.params.id) {
-        res.send('Please do not leave field empty')
+    if(!product) {
+        res.send('error not found')
         return
     }
 
-    //update a specific products based on the parameters that the user wants to update 
-    try {
-      await wishlistModel.updateOne(
-        { productId },
-        { productName: req.body.productName },
-        { price: req.body.price },
-        { expectedDays: req.body.expectedDays },
-        { country: req.body.country }
-      );
-
-      res.redirect("loggedIn/wishlist")
-    } catch (err) {
-      console.log(err);
-      res.send('error in trying to update')
-      res.redirect("loggedIn/wishlist");
-    }
+    res.render("loggedIn/edit", { product });
   },
-
+    
   //get specific product details
   getWishList: async (req, res) => {
     //get product id

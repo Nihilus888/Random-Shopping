@@ -60,17 +60,17 @@
         <% } %>
         
         <% if(product.country){ %>
-        <p class="text-2xl mt-10 mb-10 mr-15">Country: <span class="font-sans font-bold box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2"></span><%= product.country %></span></p>
+        <p class="text-2xl mt-10 mb-10 mr-15">Country: <span class="font-sans font-bold box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2"><%= product.country %></span></p>
         <% } else { %>
           <p></p>
           <% } %>
 
-      <form method="POST" action="/">
+      <form method="GET" action="/edit/<%= product._id %>">
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 mb-5"
           type="submit"
         >
-          <a href="/edit">Edit</a>
+          <a href="/edit/<%= product._id %>">Edit</a>
       </button>
       </form>
 

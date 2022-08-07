@@ -63,9 +63,7 @@ app.get('/update', authorization.Authenticated, (req, res) => {
 app.post('/update', wishListcontroller.createWishList)
 
 //Edit wishlist page
-app.get('/edit/:productId', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/edit/:productId')
-})
+app.get('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)
 
 //put request to edit product details
 app.put('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)

@@ -21,9 +21,9 @@
             Random Shop
           </li>
           <li
-            class="inline-block pl-5 indent-72 text-3xl bold text-center text-black"
+            class="inline-block pl-5 indent-60 text-3xl bold text-center text-black underline"
           >
-            Edit Wishlist
+            Edit <%= product.productName %>
           </li>
           <!--Wishlist and logout portion-->
           <li class="inline-block pl-10 pr-10 text-right indent-40 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
@@ -50,7 +50,7 @@
 
   <main class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
     <div>
-      <p class="mt-5">Edit Product name</p>
+      <p class="mt-5">Edit Product name: <%= product.productName %> </p>
       <input
         id="product_name_input"
         name="product_name"
@@ -61,7 +61,7 @@
         required
       />
 
-      <p class="mt-5">Edit Price</p>
+      <p class="mt-5">Edit Price: <%= product.price %> </p>
       <input
         id="price_name_input"
         name="price_name"
@@ -72,7 +72,7 @@
         required
       />
 
-      <p class="mt-5">Edit Expected days of delivery(optional)</p>
+      <p class="mt-5">Edit Expected days of delivery(optional) <%= product.expectedDelivery %></p>
       <input
         id="expected_days_input"
         name="expected_days_name"
@@ -82,7 +82,7 @@
         class="border-2 border-black-800 mt-5"
       />
 
-      <p class="mt-5">Edit Country (optional)</p>
+      <p class="mt-5">Edit Country (optional) <%= product.country %> </p>
       <input
         id="country_input"
         name="country_name"

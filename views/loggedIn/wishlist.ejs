@@ -52,13 +52,24 @@
         <p class="mt-2">
           Price: <span class="font-bold"><%= item.price %></span>
         </p>
-        <p class="mt-2">
+
+
+        <% if(item.expectedDelivery){ %>
+         <p class="mt-2"> 
           Expected Delivery:
           <span class="font-bold"><%= item.expectedDelivery %></span>
         </p>
+        <% } else { %>
+          <p></p>
+          <% } %>
+
+        <% if(item.country){ %>
         <p class="mt-2">
           Country: <span class="font-bold"><%= item.country %></span>
         </p>
+        <% } else { %>
+          <p></p>
+          <% } %>
       </span>
 
       <div  class="text-center mb-2 mt-2">
