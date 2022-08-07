@@ -59,28 +59,17 @@ const wishListcontroller = {
 
     res.render("loggedIn/edit", { product });
 
-    //find the product by ID and update it
     try {
-      //convert project id from an object to string
-      productId = product._id
-      console.log(productId)
-    
-      console.log(req.body.productName);
-      console.log(req.body.price);
+      const productId = req.params.productId
+      const updates = req.body
+      const options = {new: true}
+      console.log(updates)
 
-      //if update wishlist is empty
-      if (!product) {
-        res.send("error not found");
-        return;
-      }
-      await wishlistModel.update({_id: req.params.productId}, {productName: req.body.productName}, {price: req.body.price}, {expectedDelivery: req.body.expectedDelivery}, {country: req.body.country});
-      console.log("update successful");
-      res.redirect("/wishlist");
+      const result = await wishlistModel.findByIdAndUpdate(productId, updates, options)
     } catch (err) {
-      console.log(err);
-      res.send("error with updating");
+      console.log(err)
     }
-    res.redirect("/wishlist");
+  
   },
 
   //get specific product details
