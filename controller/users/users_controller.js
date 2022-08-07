@@ -42,7 +42,7 @@ const controller = {
     }
 
     //redirect to Sign In page
-    res.redirect("pages/signin");
+    res.redirect("/signin");
   },
 
   login: async (req, res) => {
@@ -57,7 +57,7 @@ const controller = {
     } catch (err) {
       console.log(err);
       res.send("failed to get username from the DB");
-      res.redirect("/Signin");
+      res.redirect("/signin");
       return;
     }
 

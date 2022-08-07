@@ -33,17 +33,15 @@ const wishListcontroller = {
 
   deleteWishList: async (req, res) => {
     //find the product with the wishlist id and remove it
-    const productId = req.params.product_id
-    console.log(productId)
+    const productId = req.params.product_id;
+    console.log(productId);
     try {
-        
       await wishlistModel.findByIdAndRemove(productId);
-      console.log('delete successful')
-
+      console.log("delete successful");
     } catch (err) {
       console.log(err);
     }
-    res.redirect('/wishlist')
+    res.redirect("/wishlist");
   },
 
   listWishlist: async (req, res) => {
@@ -57,23 +55,38 @@ const wishListcontroller = {
   //edit wish list
   editWishList: async (req, res) => {
     //get product id
-    console.log(req.params.productId)
-    const product = await wishlistModel.findById(req.params.productId)
-    console.log(product)
-
-    //if update wishlist is empty
-    if(!product) {
-        res.send('error not found')
-        return
-    }
+    const product = await wishlistModel.findById(req.params.productId);
 
     res.render("loggedIn/edit", { product });
-  },
+
+    //find the product by ID and update it
+    try {
+      //convert project id from an object to string
+      productId = product._id
+      console.log(productId)
     
+      console.log(req.body.productName);
+      console.log(req.body.price);
+
+      //if update wishlist is empty
+      if (!product) {
+        res.send("error not found");
+        return;
+      }
+      await wishlistModel.update({_id: req.params.productId}, {productName: req.body.productName}, {price: req.body.price}, {expectedDelivery: req.body.expectedDelivery}, {country: req.body.country});
+      console.log("update successful");
+      res.redirect("/wishlist");
+    } catch (err) {
+      console.log(err);
+      res.send("error with updating");
+    }
+    res.redirect("/wishlist");
+  },
+
   //get specific product details
   getWishList: async (req, res) => {
     //get product id
-    const product = await wishlistModel.findById(req.params.productId)
+    const product = await wishlistModel.findById(req.params.productId);
 
     //display product using EJS
     res.render("loggedIn/show", { product });

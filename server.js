@@ -41,10 +41,10 @@ app.get('/Signup', pageController.showSignUp)
 app.get('/Signin', pageController.showSignIn)
 
 // Use post method when user signs up
-app.post('/signup', userController.signUp)
+app.post('/Signup', userController.signUp)
 
 // Use post method when user sign in
-app.post('/signin', userController.login)
+app.post('/Signin', userController.login)
 
 //Get home loggedin page
 app.get('/Home', authorization.Authenticated, (req, res) => {
