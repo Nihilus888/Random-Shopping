@@ -54,28 +54,47 @@ const wishListcontroller = {
 
   //get edit wishlist product details
   getEditWishList: async (req, res) => {
-    const product = req.params.productId
+    const product = await wishlistModel.findById(req.params.productId);
     res.render("loggedIn/edit", { product });
-    console.log(product.productName)
   },
 
   //edit wish list
   editWishList: async (req, res) => {
-
     try {
-      const productId = req.params.productId
-      //can't get the details from the form for some reason
-      const updates = req.body
-      const options = {new: true}
-      console.log(updates)
-      console.log(productId)
+      const productId = await wishlistModel.findById(req.params.productId);
+      console.log(productId);
 
-      const result = await wishlistModel.findByIdAndUpdate(productId, updates, options)
-      res.send(result)
+      //implement something similar to create WishList above to get
+      const validationResults = wishlistValidators.createWishList.validate(
+        req.body
+      );
+
+      //if does not fulfill data schema validation, throw out error
+      if (validationResults.error) {
+        res.send(validationResults.error);
+        return;
+      }
+
+      // get the value of the wishlist which has been verified
+      const validatedResults = validationResults.value;
+      console.log(validatedResults)
+
+      const updates = validatedResults;
+      const options = { new: true };
+      console.log(updates);
+
+      const result = await wishlistModel.findByIdAndUpdate(
+        productId,
+        updates,
+        options
+      );
+      console.log(result);
+      console.log("update successful");
+      res.redirect('/wishlist')
+
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  
   },
 
   //get specific product details

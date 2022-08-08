@@ -32,7 +32,7 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, httpOnly: false, maxAge: 6000000}
+    cookie: { secure: false, httpOnly: false, maxAge: 8000000}
   }))
 
 //render home page that is not logged in
@@ -75,7 +75,7 @@ app.get('/show/:productId', authorization.Authenticated, wishListcontroller.getW
 app.post('/delete/:product_id', authorization.Authenticated, wishListcontroller.deleteWishList)
 
 //logout route rely on params to delete resource, example: req.params.id, whether document owner is request owner)
-app.delete('/logout', authorization.Authenticated, userController.logout)
+app.post('/logout', authorization.Authenticated, userController.logout)
 
 //listening on port 
 app.listen(port, async () => {

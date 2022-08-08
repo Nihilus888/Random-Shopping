@@ -27,6 +27,7 @@
     "joi": "^17.6.0",
     "joi-password": "^4.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^6.5.0"
+    "mongoose": "^6.5.0",
+    "tailwindcss-animation-delay": "^1.0.7"
   }
 }
