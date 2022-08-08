@@ -60,22 +60,22 @@ app.get('/update', authorization.Authenticated, (req, res) => {
 })
 
 //post request to create wishlist
-app.post('/update', wishListcontroller.createWishList)
+app.post('/update', authorization.Authenticated, wishListcontroller.createWishList)
 
 //Edit wishlist page
-app.get('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)
+app.get('/edit/:productId', authorization.Authenticated, wishListcontroller.getEditWishList)
 
 //put request to edit product details
-app.put('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)
+app.post('/edit/:productId', authorization.Authenticated, wishListcontroller.editWishList)
 
-//show product page by product id
+//show product page by product id 
 app.get('/show/:productId', authorization.Authenticated, wishListcontroller.getWishList)
 
-//delete a certain wishlist
+//delete a certain wishlist (rely on params to delete resource, example: req.params.id, whether document owner is request owner)
 app.post('/delete/:product_id', authorization.Authenticated, wishListcontroller.deleteWishList)
 
-//logout route
-app.post('/logout', authorization.Authenticated, userController.logout)
+//logout route rely on params to delete resource, example: req.params.id, whether document owner is request owner)
+app.delete('/logout', authorization.Authenticated, userController.logout)
 
 //listening on port 
 app.listen(port, async () => {

@@ -52,20 +52,26 @@ const wishListcontroller = {
     res.render("loggedIn/wishlist", { wishList });
   },
 
+  //get edit wishlist product details
+  getEditWishList: async (req, res) => {
+    const product = req.params.productId
+    res.render("loggedIn/edit", { product });
+    console.log(product.productName)
+  },
+
   //edit wish list
   editWishList: async (req, res) => {
-    //get product id
-    const product = await wishlistModel.findById(req.params.productId);
-
-    res.render("loggedIn/edit", { product });
 
     try {
       const productId = req.params.productId
+      //can't get the details from the form for some reason
       const updates = req.body
       const options = {new: true}
       console.log(updates)
+      console.log(productId)
 
       const result = await wishlistModel.findByIdAndUpdate(productId, updates, options)
+      res.send(result)
     } catch (err) {
       console.log(err)
     }
