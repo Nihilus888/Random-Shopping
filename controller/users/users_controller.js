@@ -96,7 +96,7 @@ const controller = {
         console.log("Login successful");
         console.log(user.username)
         //redirect to login home
-        res.redirect("/Home");
+        res.render("loggedIn/Home", { user });
       });
     });
   },

@@ -51,9 +51,9 @@
     </header>
 
     <form method="POST" action="/edit/<%= product.id %>">
-      <div class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
+      <div class="box-border border-emerald-600 h-auto w-6/12 border-4 mt-10 text-center m-auto shadow-zinc-700 shadow-lg opacity-90 neutral">
         <div>
-          <p class="mt-5">Edit <%= product.productName %></p>
+          <p class="mt-5">Edit: <span class="font-bold text-black"><%= product.productName %></span></p>
           <input
             id="product_name_input"
             name="productName"
@@ -63,7 +63,7 @@
             class="border-2 border-black-800 mt-5"
           />
 
-          <p class="mt-5">Price <%= product.price %> </p>
+          <p class="mt-5">Price: <span class="font-bold text-black"><%= product.price %> </span> </p>
           <input
             id="price_name_input"
             name="price"
@@ -73,7 +73,7 @@
             class="border-2 border-black-800 mt-5"
           />
 
-          <p class="mt-5">Expected days of delivery(optional) <%= product.expectedDelivery %> </p>
+          <p class="mt-5">Expected days of delivery(optional): <span class="font-bold text-black"><%= product.expectedDelivery %></span> </p>
           <input
             id="expected_days_input"
             name="expectedDelivery"
@@ -83,7 +83,7 @@
             class="border-2 border-black-800 mt-5"
           />
 
-          <p class="mt-5">Country (optional) <%= product.country %></p>
+          <p class="mt-5">Country (optional): <span class="font-bold text-black"><%= product.country %> </span> </p>
           <input
             id="country_input"
             name="country"
@@ -95,7 +95,7 @@
         </div>
 
         <button
-          class="inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-5 mb-5 p-10"
+          class="inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-emerald-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-5 mb-5 p-10"
           type="submit"
         >
           Edit
