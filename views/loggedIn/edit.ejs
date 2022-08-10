@@ -40,7 +40,7 @@
           <li
           class="inline-block pr-10 mr-15 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
         >
-          <form method="POST" action="/logout">
+          <form method="POST" action="/logout?_method=DELETE">
             <!--Update logout parameters-->
             <button>Logout</button>
           </form>
@@ -50,7 +50,7 @@
       </nav>
     </header>
 
-    <form method="POST" action="/edit/<%= product.id %>">
+    <form method="POST" action="/edit/<%= product.id %>?_method=PUT">
       <div class="box-border border-emerald-600 h-auto w-6/12 border-4 mt-10 text-center m-auto shadow-zinc-700 shadow-lg opacity-90 neutral">
         <div>
           <p class="mt-5">Edit: <span class="font-bold text-black"><%= product.productName %></span></p>

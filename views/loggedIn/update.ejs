@@ -38,7 +38,7 @@
 
           <li class="inline-block pr-10 indent-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
 
-            <form method="POST" action="/logout">
+            <form method="POST" action="/logout?_method=DELETE">
               <!--Update logout parameters-->
              <button>Logout</button>
             </form>
@@ -48,7 +48,7 @@
       </nav>
     </header>
 
-    <form method="POST" action="/Update">
+    <form method="POST" action="/Update?_method=PUT">
       <div class="box-border h-auto w-6/12 border-4 mt-10 text-center m-auto">
         <div>
           <p class="mt-5">Product name</p>

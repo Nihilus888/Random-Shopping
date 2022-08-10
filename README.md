@@ -9,18 +9,21 @@ hijacking, unauthorized login if the person's computer has been stolen, etc.
 
 ## Planning Stages and approach taken
 
+Rename the screenshots
+!['NotLoggedIn']("public/img/Screenshot 2022-07-30 at 6.06.01 PM.png")
+
 1. Wireframing
    Not logged in wireframe flowchart
 
-   ![NotLoggedIn!](public/img/Screenshot 2022-08-10 at 4.48.58 PM.png)
+   ![NotLoggedIn]('')
 
    Logged in wireframe flowchart
 
-   ![LoggedIn!](public/img/Screenshot 2022-07-30 at 6.06.01 PM.png)
+   ![LoggedIn](public/img/Screenshot 2022-07-30 at 6.06.01 PM.png)
 
    Entire wireframe flowchart
 
-   ![Wireframe!](public/img/Screenshot 2022-07-30 at 6.07.20 PM.png)
+   ![Wireframe](public/img/Screenshot 2022-07-30 at 6.07.20 PM.png)
 
 
 The wireframe flowchart gives us an idea of how to different pages are suppose to look and shows the relationship between the different web

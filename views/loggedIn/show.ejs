@@ -74,7 +74,8 @@
       </button>
       </form>
 
-     <form method="POST" action="/delete/<%= product._id %>"> 
+<!--Install middle ware method override ?=M.patch-->
+     <form method="POST" action="/delete/<%= product._id %>?_method=DELETE"> 
         <div  class="text-center mb-2 mt-2">
           <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-left mt-5 mb-5 delay-150 duration-300"
