@@ -8,7 +8,7 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.odxzs.mongodb.net`
 
