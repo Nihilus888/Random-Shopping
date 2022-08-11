@@ -22,24 +22,24 @@
           </li>
 
           <li
-            class="inline-block ml-10 indent-72 text-3xl bold text-center underline text-black"
+            class="inline-block indent-64 text-3xl bold text-center underline text-black"
           >
-          Name: <%= product.productName %>
+          Name: <span class="font-bold"><%= product.productName %></span>
           </li>
 
           <!--Wishlist and logout portion-->
-          <li class="inline-block pr-10 text-right pl-10 indent-40 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
+          <li class="inline-block pr-10 text-right pl-10 indent-36 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
             <!--Update routing parameters-->
             <a href="/Home">Home</a>
           </li>
 
-          <li class="inline-block pr-10 text-right indent-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
+          <li class="inline-block pr-10 text-right indent-5 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
             <!--Update routing parameters-->
             <a href="/wishlist">Wishlist</a>
           </li>
 
-          <li class="inline-block pr-10 mr-15 indent-10 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
-            <form method="POST" action="/logout">
+          <li class="inline-block pr-5 mr-5 indent-5 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
+            <form method="POST" action="/logout?_method=DELETE">
               <!--Update logout parameters-->
               <button>Logout</button>
             </form>

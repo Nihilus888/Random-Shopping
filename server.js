@@ -29,10 +29,10 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, httpOnly: false, maxAge: 8000000}
+    cookie: { secure: false, httpOnly: false, maxAge: 9000000}
   }))
 
 //render home page that is not logged in
