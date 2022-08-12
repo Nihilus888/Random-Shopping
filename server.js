@@ -56,7 +56,7 @@ app.get('/wishlist', authorization.Authenticated, wishListcontroller.listWishlis
 
 //update wishlist page
 app.get('/update', authorization.Authenticated, (req, res) => {
-    res.render('loggedIn/Update')
+    res.render('loggedIn/update')
 })
 
 //post request to create wishlist
