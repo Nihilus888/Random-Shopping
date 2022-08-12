@@ -96,7 +96,7 @@ const controller = {
         console.log("Login successful");
         console.log(user.username)
         //redirect to login home
-        res.render("loggedIn/Home", { user });
+        res.render("loggedIn/home", { user });
       });
     });
   },
@@ -114,7 +114,7 @@ const controller = {
         // guard against forms of session fixation
         req.session.regenerate(function (err) {
             if (err) {
-                res.redirect('/Home')
+                res.redirect('/home')
                 return
             }
             
