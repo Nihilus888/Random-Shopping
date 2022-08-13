@@ -76,3 +76,26 @@ Unfortunately, all the users have a shared wishlist and none of them have a uniq
 2. My routing name conventions are utterly dreadful
 
 I do acknowledge that my route naming is still rather egregious as I still have not properly grasp the entire concept of how routing functions work in its entirety. To make up for this, I have been watching youtube videos and using online articles to supplement and plug the holes in my knowledge where there are gaps. Once again due to time constraints, I am unable to amend it for practical reasons such as the entire collapse of my applications and not knowledgable enough to patch it. 
+
+
+## How to use
+
+Clone the repository using:
+
+git clone https://github.com/Nihilus888/Random-Shopping
+
+Afterwards download nodemon and npm by typing in your terminal:
+
+npm i
+
+npm i nodemon
+
+To start it type:
+
+nodemon server.js
+
+Alternatively, you can use the heroku app deployment:
+
+https://random-shopping-1.herokuapp.com/
+
+
