@@ -11,6 +11,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.odxzs.mongodb.net`
+console.log(process.env.MONGO_USER)
 
 const pageController = require('./controller/pages/page_controller')
 const userController = require('./controller/users/users_controller')

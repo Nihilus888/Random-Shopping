@@ -82,19 +82,23 @@ I do acknowledge that my route naming is still rather egregious as I still have 
 
 Clone the repository using:
 
+```
 git clone https://github.com/Nihilus888/Random-Shopping
+```
 
 Afterwards download nodemon and npm by typing in your terminal:
 
+```
 npm i
 
-npm i nodemon
+npm i nodemon 
 
 To start it type:
 
 nodemon server.js
+```
 
-Alternatively, you can use the heroku app deployment:
+Alternatively, you can use the heroku app deployment (heroku decided not to be free anymore sadly):
 
 https://random-shopping-1.herokuapp.com/
 
